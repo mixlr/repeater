@@ -99,7 +99,7 @@ module Mixlr
       end
 
       def run
-        puts "Running with repeaters: #{@repeaters.map(&:name).inspect}"
+        Repeater.logger.info "Running with repeaters: #{@repeaters.map(&:name).inspect}"
 
         loop do
           @repeaters.each do |repeater|
