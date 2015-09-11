@@ -16,12 +16,12 @@ module Mixlr
       DEFAULT_INTERVAL = 10
 
       def self.on_exception(&block)
-        @exception_block = block
+        @@exception_block = block
       end
 
       def self.call_exception_block(exception)
-        if @exception_block
-          @exception_block.call(exception)
+        if defined? @@exception_block
+          @@exception_block.call(exception)
         end
       end
 
@@ -64,7 +64,7 @@ module Mixlr
             perform_task
           rescue => e
             success = false
-            self.class.logger.error "[#{LOG_TAG}] exception inside #{name}: #{e.message}"
+            logger.error "[#{LOG_TAG}] exception inside #{name}: #{e.message}"
             puts e.message
             puts e.backtrace
             self.class.call_exception_block(e)
