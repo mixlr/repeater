@@ -105,8 +105,6 @@ module Mixlr
           @repeaters.each do |repeater|
             if repeater.ready_to_run?
               repeater.run
-            else
-              Repeater.logger.debug("Not ready to run: #{repeater.name}")
             end
           end
 
