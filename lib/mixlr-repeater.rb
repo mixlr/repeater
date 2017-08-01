@@ -73,7 +73,7 @@ module Mixlr
 
             msg = success ? :info : :error
 
-            logger.send(msg, "[%s] Took %.04fs to run %s" % [ LOG_TAG, total_ms, name ])
+            logger.send(msg, "[%s] %s took %.04f seconds to run" % [ LOG_TAG, name, total_ms ])
           end
         end
       end
