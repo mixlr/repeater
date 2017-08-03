@@ -1,6 +1,8 @@
+require_relative 'lib/version'
+
 Gem::Specification.new do |s|
   s.name        = 'mixlr-repeater'
-  s.version     = '0.4'
+  s.version     = Mixlr::Repeater::VERSION
   s.date        = '2015-09-11'
   s.summary     = "A gem for repeating short jobs"
   s.description = "A gem for repeating short jobs"
